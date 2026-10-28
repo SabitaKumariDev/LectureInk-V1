@@ -1,0 +1,34 @@
+{
+  "name": "lectureink",
+  "version": "0.1.0",
+  "description": "Open-source AI note-taker for lecture videos. Notes, code and Excalidraw diagrams straight into your markdown vault.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "zip": "wxt zip",
+    "test": "vitest run",
+    "check": "tsc --noEmit",
+    "postinstall": "node -e \"require('fs').cpSync('node_modules/@excalidraw/excalidraw/dist/prod/fonts','public/fonts',{recursive:true,filter:s=>!s.includes('Xiaolai')})\" && wxt prepare"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "@excalidraw/excalidraw": "0.18.1",
+    "docx": "9.15.0",
+    "highlight.js": "11.12.0",
+    "idb-keyval": "6.3.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "^5.2.0",
+    "@wxt-dev/module-react": "1.2.2",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4",
+    "wxt": "0.20.27"
+  }
+}
